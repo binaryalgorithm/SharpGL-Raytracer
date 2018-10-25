@@ -1,0 +1,14 @@
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\bin\Debug\SharpGL1.exe.config
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\bin\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\bin\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGL Raytracer.csprojAssemblyReference.cache
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGL1.Properties.Resources.resources
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGL Raytracer.csproj.GenerateResource.cache
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGL Raytracer.csproj.CoreCompileInputs.cache
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGL Raytracer.csproj.CopyComplete
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\bin\Debug\OpenCLTest.cl
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\bin\Debug\RayTracer.cl
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGLCudafy.RandomProvider.resources
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\bin\Debug\Cloo.clSharp.dll

@@ -1,0 +1,36 @@
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL1.exe.config
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL.dll
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL.SceneGraph.dll
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL.WinForms.dll
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL Cudafy.csprojResolveAssemblyReference.cache
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.Properties.Resources.resources
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.SharpGLForm.resources
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL Cudafy.csproj.GenerateResource.Cache
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL Cudafy.csprojResolveAssemblyReference.cache
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.Properties.Resources.resources
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGLCudafy.SharpGLForm.resources
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL Cudafy.csproj.GenerateResource.Cache
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL1.exe.config
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\bin\Debug\Cudafy.NET.dll
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\bin\Debug\Cudafy.NET.xml
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL1.exe.config
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\bin\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\bin\Debug\Cudafy.NET.dll
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\bin\Debug\Cudafy.NET.xml
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.Properties.Resources.resources
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGLCudafy.SharpGLForm.resources
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL Cudafy.csproj.GenerateResource.cache
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL Cudafy.csproj.CoreCompileInputs.cache
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL Cudafy.csproj.CopyComplete
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\Programming\SharpGL Cudafy\SharpGL1\obj\x86\Debug\SharpGL Cudafy.csprojAssemblyReference.cache

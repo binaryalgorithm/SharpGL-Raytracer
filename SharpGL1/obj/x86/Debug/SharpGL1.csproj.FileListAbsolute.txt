@@ -1,0 +1,24 @@
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL1.exe.config
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL.dll
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL.SceneGraph.dll
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL.WinForms.dll
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.Properties.Resources.resources
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.SharpGLForm.resources
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.csproj.GenerateResource.Cache
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.csprojResolveAssemblyReference.cache
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL1.exe.config
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL1.exe
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL1.pdb
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL.dll
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL.SceneGraph.dll
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\bin\Debug\SharpGL.WinForms.dll
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.csprojResolveAssemblyReference.cache
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.Properties.Resources.resources
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.SharpGLForm.resources
+C:\Users\cwinn\Desktop\desktop cleanup 1\personal\NRN\SharpGL1\SharpGL1\obj\x86\Debug\SharpGL1.csproj.GenerateResource.Cache
