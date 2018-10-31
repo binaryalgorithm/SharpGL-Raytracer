@@ -1,5 +1,7 @@
 // custom struct definitions
 
+static const int VOXEL_SIZE = 32;
+
 typedef struct Camera
 {
 	float x;
@@ -30,7 +32,7 @@ typedef struct ChunkData
 	int chunkZ;
 	int hash;
 
-	char voxelData[8 * 8 * 8];
+	char voxelData[VOXEL_SIZE * VOXEL_SIZE * VOXEL_SIZE];
 } ChunkData;
 
 // hash func
@@ -72,11 +74,11 @@ int ChunkFromVoxelF(float vPosf)
 
 	if(vPos >= 0)
 	{
-		return (vPos / 8); // 0-7=0 8-15=1
+		return (vPos / VOXEL_SIZE); // 0-7=0 8-15=1
 	}
 	else
 	{
-		return ((vPos + 1) / 8) - 1; // -1 to -8 = -1
+		return ((vPos + 1) / VOXEL_SIZE) - 1; // -1 to -8 = -1
 	}
 }
 
@@ -84,27 +86,27 @@ int ChunkFromVoxel(int vPos)
 {
 	if(vPos >= 0)
 	{
-		return (vPos / 8); // 0-7=0 8-15=1
+		return (vPos / VOXEL_SIZE); // 0-7=0 8-15=1
 	}
 	else
 	{
-		return ((vPos + 1) / 8) - 1; // -1 to -8 = -1
+		return ((vPos + 1) / VOXEL_SIZE) - 1; // -1 to -8 = -1
 	}
 }
 
 int MinVoxelFromChunk(int vPos)
 {
-	return vPos << 3;
+	return vPos * VOXEL_SIZE;
 }
 
 int MaxVoxelFromChunk(int vPos)
 {
-	return ((vPos + 1) << 3) - 1;
+	return ((vPos + 1) * VOXEL_SIZE) - 1;
 }
 
 // main func
 
-kernel void RayTraceMain(write_only image2d_t bmp, global Camera* camera, global float* textureData, global ChunkData* chunkHashData, int maxOffset, int currentArraySize, float mouseX, float mouseY, global ChunkData* chunkData)
+kernel void RayTraceMain(write_only image2d_t bmp, global Camera* camera, global float* textureData, global ChunkData* chunkHashData, int maxOffset, int currentArraySize, float mouseX, float mouseY)
 {
 	// current pixel coordinates
 	int tx = get_global_id(0);
@@ -213,7 +215,7 @@ kernel void RayTraceMain(write_only image2d_t bmp, global Camera* camera, global
 
 	// max ray travel distance
     float maxDistance = 256.0f; // safety measure
-    maxDistance = 64.0f;
+    maxDistance = 96.0f;
 	float currentDistance = 0.0f;
 
 	float ix = 0.0f;
@@ -246,11 +248,11 @@ kernel void RayTraceMain(write_only image2d_t bmp, global Camera* camera, global
 		chunkY = ChunkFromVoxel(voxelY);
 		chunkZ = ChunkFromVoxel(voxelZ);
 
-		int chunkOffsetX = (voxelX & 7);
-		int chunkOffsetY = (voxelY & 7);
-		int chunkOffsetZ = (voxelZ & 7);
+		int chunkOffsetX = (voxelX & (VOXEL_SIZE - 1));
+		int chunkOffsetY = (voxelY & (VOXEL_SIZE - 1));
+		int chunkOffsetZ = (voxelZ & (VOXEL_SIZE - 1));
 
-		if(abs(camChunkX - chunkX) > 16 || abs(camChunkY - chunkY) > 16 || abs(camChunkZ - chunkZ) > 16)
+		if(abs(camChunkX - chunkX) > 3 || abs(camChunkY - chunkY) > 3 || abs(camChunkZ - chunkZ) > 3)
 		{
 			break;
 		}
@@ -260,32 +262,16 @@ kernel void RayTraceMain(write_only image2d_t bmp, global Camera* camera, global
 
 		int index = Find(chunkX, chunkY, chunkZ, chunkHashData, maxOffset, currentArraySize);		
 
-		int index2 = (16 + (chunkX - camChunkX)) + ((16 + (chunkY - camChunkY))*33) + ((16 + (chunkZ - camChunkZ))*33*33);
-		
-		global ChunkData* viewcData = &chunkData[index2];
-
-		if(false)
+		if(index >= 0)
 		{
-			if(viewcData->valid == 2)
-			{
-				int subIndex = chunkOffsetX + (chunkOffsetY * 8) + (chunkOffsetZ * 64);
-				vType = viewcData->voxelData[subIndex];
-				emptyFlag = viewcData->empty;		
-			}		
+			global ChunkData* cdata = &chunkHashData[index];
+			int subIndex = chunkOffsetX + (chunkOffsetY * VOXEL_SIZE) + (chunkOffsetZ * VOXEL_SIZE * VOXEL_SIZE);
+			vType = cdata->voxelData[subIndex];
+			emptyFlag = cdata->empty;
 		}
-		else		
+		else
 		{
-			if(index >= 0)
-			{
-				global ChunkData* cdata = &chunkHashData[index];
-				int subIndex = chunkOffsetX + (chunkOffsetY * 8) + (chunkOffsetZ * 64);
-				vType = cdata->voxelData[subIndex];
-				emptyFlag = cdata->empty;
-			}
-			else
-			{
-				notFoundCount++;
-			}
+			notFoundCount++;
 		}
 
 		if(vType > 0)
@@ -389,7 +375,7 @@ kernel void RayTraceMain(write_only image2d_t bmp, global Camera* camera, global
 			break;
 		}
 		
-		if(emptyFlag == 1) // skip 8 voxels in this large cube (chunk), as it's empty
+		if(emptyFlag == 1) // skip VOXEL_SIZE voxels in this large cube (chunk), as it's empty
 		{
 			emptyCount++;
 
@@ -418,7 +404,7 @@ kernel void RayTraceMain(write_only image2d_t bmp, global Camera* camera, global
 
 			currentDistance += nextDistance; // add step length
 		}
-		else if(true)
+		else // single voxel step
 		{
 			// x/y/z of cube volume
 			float x1 = floor(rayx);
@@ -432,30 +418,6 @@ kernel void RayTraceMain(write_only image2d_t bmp, global Camera* camera, global
 			if (vx >= 0) { ix = x2 - rayx; } else { ix = rayx - x1; }
 			if (vy >= 0) { iy = y2 - rayy; } else { iy = rayy - y1; }
 			if (vz >= 0) { iz = z2 - rayz; } else { iz = rayz - z1; }
-
-			ix = fabs(ix / vx);
-			iy = fabs(iy / vy);
-			iz = fabs(iz / vz);
-
-			float nextDistance = min(iz, min(ix, iy)) + 0.01f; // step just over boundary
-
-			rayx += vx * nextDistance;
-			rayy += vy * nextDistance;
-			rayz += vz * nextDistance;
-
-			currentDistance += nextDistance; // add step length
-		}
-		else if(false)
-		{
-			// inner x/y/z of cube volume
-			ix = rayx - floor(rayx);
-			iy = rayy - floor(rayy);
-			iz = rayz - floor(rayz);
-
-			// get dist remaining in cube axis
-			if (vx > 0) { ix = 1.0f - ix; } else { ix = 1.0f + ix; }
-			if (vy > 0) { iy = 1.0f - iy; } else { iy = 1.0f + iy; }
-			if (vz > 0) { iz = 1.0f - iz; } else { iz = 1.0f + iz; }
 
 			ix = fabs(ix / vx);
 			iy = fabs(iy / vy);

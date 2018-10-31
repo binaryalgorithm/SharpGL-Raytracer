@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 
@@ -31,7 +33,7 @@ namespace SharpGLCudafy
         public int currentArraySize = 0;
         public int maxOffset = 0;
         public int recordCount = 0;
-
+        public bool GPUSizeUpdateRequired = true;
         public float maxLoadFactor = 0.5f;
 
         public ChunkHashKey[] keys;
@@ -41,7 +43,7 @@ namespace SharpGLCudafy
 
         public ChunkHashTable(float setMaxLoad = 0.7f)
         {
-            currentArraySize = hashPrimes[5]; // 1543, to prevent early resizing
+            currentArraySize = hashPrimes[1]; // to prevent early resizing
             keys = new ChunkHashKey[currentArraySize + 100];
             values = new ChunkData[currentArraySize + 100];
 
@@ -106,7 +108,7 @@ namespace SharpGLCudafy
             return new ChunkData();
         }
 
-        public bool Remove(int x, int y, int z)
+        public int FindIndex(int x, int y, int z)
         {
             int hash = Hash(x, y, z);
             int slotHash = hash;
@@ -115,10 +117,39 @@ namespace SharpGLCudafy
             {
                 if (keys[slotHash].x == x && keys[slotHash].y == y && keys[slotHash].z == z)
                 {
+                    // key match, get value
+                    return slotHash;
+                }
+
+                slotHash++;
+            }
+
+            // not found
+            return -1;
+        }
+
+        public bool Remove(int x, int y, int z, bool flushToDisk = true)
+        {
+            int hash = Hash(x, y, z);
+            int slotHash = hash;
+
+            while (slotHash <= hash + maxOffset)
+            {
+                if (keys[slotHash].x == x && keys[slotHash].y == y && keys[slotHash].z == z)
+                {
+                    ChunkData cd = values[slotHash];
+
+                    if (cd.valid == 1 && flushToDisk == true)
+                    {
+                        // store chunk before unloading it 
+                        Util.SaveChunkToDisk(cd);
+                    }
+
                     // key match, remove
                     values[slotHash] = new ChunkData();
                     keys[slotHash] = new ChunkHashKey();
                     keys[slotHash].hash = -1; // clear code
+                    recordCount--;
                     return true;
                 }
 
@@ -262,6 +293,54 @@ namespace SharpGLCudafy
                     Insert(tempKeys[n].x, tempKeys[n].y, tempKeys[n].z, tempValues[n]); // recalc hash will occur on insert, insert data
                 }
             }
+
+            GPUSizeUpdateRequired = true;
+        }
+
+        public int RemoveOutsideViewRange(int cameraChunkX, int cameraChunkY, int cameraChunkZ, int viewRange = 4)
+        {
+            int removeCount = 0;
+
+            for (int n = 0; n < values.Length; n++)
+            {
+                if (values[n].valid == 1)
+                {
+                    ChunkData cd = values[n];
+
+                    if (Math.Abs(cd.chunkX - cameraChunkX) > viewRange || Math.Abs(cd.chunkY - cameraChunkY) > viewRange || Math.Abs(cd.chunkZ - cameraChunkZ) > viewRange)
+                    {
+                        // store chunk before unloading it 
+                        Util.SaveChunkToDisk(cd);
+
+                        // remove 'far away' chunks
+                        values[n] = new ChunkData();
+                        keys[n] = new ChunkHashKey();
+                        keys[n].hash = -1; // clear code
+                        recordCount--;
+                        removeCount++;
+                        continue;
+                    }
+                }
+            }
+
+            return removeCount;
+        }
+
+        public int SaveAllChunksToDisk()
+        {
+            int saveCount = 0;
+
+            for (int n = 0; n < values.Length; n++)
+            {
+                if (values[n].valid == 1)
+                {
+                    ChunkData cd = values[n];                    
+                    Util.SaveChunkToDisk(cd);
+                    saveCount++;
+                }
+            }
+
+            return saveCount;
         }
     }
 }

@@ -10,5 +10,5 @@ C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGL1
 C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGL1.pdb
 C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\bin\Debug\OpenCLTest.cl
 C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\bin\Debug\RayTracer.cl
-C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGLCudafy.RandomProvider.resources
 C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\bin\Debug\Cloo.clSharp.dll
+C:\Users\cwinn\Desktop\Programming\SharpGL Raytracer\SharpGL1\obj\Debug\SharpGLCudafy.SharpGLForm.resources
